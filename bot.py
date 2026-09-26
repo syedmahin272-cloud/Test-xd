@@ -6,7 +6,7 @@ from telegram import (
 )
 from telegram.ext import Application, CommandHandler, ContextTypes
 
-BOT_TOKEN = "8954506479:AAE-9kef73jDKNTXuTDv-bABgktRA6vXWV8"
+BOT_TOKEN = "8954506479:AAEIQXRwypJVZaIGhfOSVJpr5kJLVgIeuLE"
 
 ADMIN_USERNAME = "@Syedmahinislam"
 CUSTOM_EMOJI_ID = "6242460902872850889"
