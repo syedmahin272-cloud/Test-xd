@@ -1,10 +1,15 @@
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, CopyTextButton
+from telegram import (
+    Update,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    CopyTextButton,
+)
 from telegram.ext import Application, CommandHandler, ContextTypes
 
 BOT_TOKEN = "8954506479:AAE-9kef73jDKNTXuTDv-bABgktRA6vXWV8"
 
 ADMIN_USERNAME = "@Syedmahinislam"
-CUSTOM_EMOJI_ID = "5875203253028787552"
+CUSTOM_EMOJI_ID = "6242460902872850889"
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -13,18 +18,18 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [
             InlineKeyboardButton(
                 text="GET ADMIN",
-                copy_text=CopyTextButton(ADMIN_USERNAME),
+                copy_text=CopyTextButton(
+                    text=ADMIN_USERNAME
+                ),
                 style="success",
                 icon_custom_emoji_id=CUSTOM_EMOJI_ID
             )
         ]
     ]
 
-    reply_markup = InlineKeyboardMarkup(keyboard)
-
     await update.message.reply_text(
         "👤 Admin Username Copy করতে নিচের Button-এ চাপ দিন 👇",
-        reply_markup=reply_markup
+        reply_markup=InlineKeyboardMarkup(keyboard)
     )
 
 
@@ -33,7 +38,7 @@ def main():
 
     app.add_handler(CommandHandler("start", start))
 
-    print("Bot is running...")
+    print("Bot Started...")
     app.run_polling()
 
 
